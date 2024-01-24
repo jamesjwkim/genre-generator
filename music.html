@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Genre</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        button {
+            padding: 10px;
+            border: 2px solid #000; /* Initial border style */
+            transition: border 0.3s ease-in-out; /* Border transition effect */
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        #resultdiv {
+            margin: 20px;
+        }
+
+        /* #result {
+            opacity: 0;
+            transition: opacity 1s linear; 
+        } */
+
+        /* #resultdiv {
+            background-color: ;
+        } */
+    </style>
+    <script src="music.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1>Dance Genre Generator</h1>
+    </div>
+    <div>
+        <button onclick="getRandomItem()" id="generateButton">Generate!</button>
+    </div>
+    <div id="resultdiv">
+        <span id="result"></span>
+    </div>
+</body>
+</html>
