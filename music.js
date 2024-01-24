@@ -12,6 +12,8 @@ let genres = ["Old School Hiphop",
 "New Style Hiphop"];
 
 const resultSpan = document.getElementById("result");
+const generateButton = document.getElementById("generateButton");
+
 
 resultSpan.textContent = "no genre selected..."
 resultSpan.style.color = "grey"
@@ -25,9 +27,19 @@ function getRandomItem() {
     resultSpan.style.color = "black" 
 
     generateButton.style.border = "2px solid white"; // Change border color
-  setTimeout(() => {
-    generateButton.style.border = "2px solid #000"; // Reset border color after a short delay
-  }, 250);
+
+    // Remove and re-add the element to trigger the animation again
+    resultSpan.style.animation = "none";
+    void resultSpan.offsetWidth; // Trigger reflow
+    // Add a fade-in animation
+    resultSpan.style.animation = "fadeIn 0.5s ease-in-out";
+
+
+    setTimeout(() => {
+      generateButton.style.border = "2px solid #000"; // Reset border color after a short delay
+      resultSpan.style.animation = ""; // Reset animation
+    }, 250);
+
 
     
 
