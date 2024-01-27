@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Genre</title>
+    <link rel="stylesheet" href="music.css">
     <style>
         body {
             display: flex;
@@ -12,6 +13,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         button {
@@ -46,16 +48,65 @@
             margin-top: 0;
         }
 
+        #resultdiv {
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 21px;
+        }
+
+        .dark-mode {
+            background-color: rgb(88, 88, 88);
+            color: white;
+        }
+
+        .dark-mode #result {
+            color: white !important;
+        }
+        
+        .dark-mode #toggle p {
+            color: white;
+        }
+        
+        #container {
+            position: absolute;
+            top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* height: 100vh; */
+        }
+
+        #toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #toggle p {
+            color: rgb(136, 136, 136);
+        }
+
     </style>
     <script src="music.js" defer></script>
 </head>
 <body>
+    <div id="container">
+        <div id="toggle">
+            <!-- <button onclick="darkMode()">test</button> -->
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+            <p>dark mode.</p>
+        </div>
+    </div>
     <div id="title">
         <h1>Music Genre</h1>
         <h1>Randomizer</h1>
     </div>
     <div>
         <button onclick="getRandomItem()" id="generateButton">Generate!</button>
+        
     </div>
     <div id="resultdiv">
         <span id="result"></span>

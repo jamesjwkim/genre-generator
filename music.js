@@ -51,7 +51,22 @@ function getRandomItem() {
       resultSpan.style.animation = ""; // Reset animation
     }, 250);
 
-
-    
-
 }
+
+function darkMode() {
+  console.log("darkmode toggled.")
+  let element = document.body;
+  element.classList.toggle("dark-mode")
+}
+
+darkModeToggle.addEventListener('change', function() {
+  // Check if the checkbox is checked
+  if (darkModeToggle.checked) {
+    // Call the darkMode function if checked
+    darkMode();
+  } else {
+    // If unchecked, you can implement a light mode function if needed
+    let element = document.body;
+    element.classList.remove("dark-mode")
+  }
+});
